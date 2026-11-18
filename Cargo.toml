@@ -1,0 +1,12 @@
+[package]
+name = "doom-term"
+version = "0.1.0"
+edition = "2021"
+authors = ["Dafenxz0"]
+license = "MIT"
+description = "Wolfenstein/DOOM-style textured raycaster engine in the terminal with 24-bit TrueColor half-block rendering, dynamic doors, sprites, and rayon parallelism"
+repository = "https://github.com/Dafenxz0/doom-term"
+
+[dependencies]
+crossterm = "0.28"
+rayon = "1.10"
