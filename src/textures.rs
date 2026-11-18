@@ -252,7 +252,7 @@ fn gen_door() -> Vec<Rgb> {
     let mut buf = Vec::with_capacity(TEX_LEN);
     for y in 0..TEX_SIZE {
         for x in 0..TEX_SIZE {
-            let frame = x < 4 || x >= 60 || y < 4 || y >= 60;
+            let frame = !(4..60).contains(&x) || !(4..60).contains(&y);
             let center_seam = x == 31 || x == 32;
             let badge = (22..42).contains(&x) && (24..40).contains(&y);
             let stripe = badge && ((x + y) / 4).is_multiple_of(2);
@@ -305,7 +305,7 @@ fn gen_ceiling() -> Vec<Rgb> {
     let mut buf = Vec::with_capacity(TEX_LEN);
     for y in 0..TEX_SIZE {
         for x in 0..TEX_SIZE {
-            let beam = x < 3 || x >= 61 || y < 3 || y >= 61;
+            let beam = !(3..61).contains(&x) || !(3..61).contains(&y);
             let vent = (14..50).contains(&x) && (14..50).contains(&y) && y.is_multiple_of(4);
             let n = hash2d(x, y, 7) / 4;
             let color = if beam {
