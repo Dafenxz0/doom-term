@@ -198,7 +198,14 @@ mod tests {
             patrol_dir: Vec2::new(1.0, 0.0),
         }];
         let mut fb_occluded = fb_no_sprite.clone();
-        render_sprites(&mut fb_occluded, &camera, &occluded_sprite, &atlas, &lighting, 0.0);
+        render_sprites(
+            &mut fb_occluded,
+            &camera,
+            &occluded_sprite,
+            &atlas,
+            &lighting,
+            0.0,
+        );
         assert_eq!(fb_occluded.pixels, fb_no_sprite.pixels);
 
         // Sprite in front of wall at (2.2, 1.5): must modify center pixels
@@ -209,7 +216,14 @@ mod tests {
             patrol_dir: Vec2::new(1.0, 0.0),
         }];
         let mut fb_visible = fb_no_sprite.clone();
-        render_sprites(&mut fb_visible, &camera, &visible_sprite, &atlas, &lighting, 0.0);
+        render_sprites(
+            &mut fb_visible,
+            &camera,
+            &visible_sprite,
+            &atlas,
+            &lighting,
+            0.0,
+        );
         assert_ne!(fb_visible.pixels, fb_no_sprite.pixels);
     }
 

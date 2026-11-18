@@ -103,7 +103,11 @@ pub fn draw_minimap(fb: &mut Framebuffer, map: &Map, camera: &Camera, sprites: &
                 && py < (origin_y + mini_h) as i32
             {
                 let prev = fb.get_pixel(px as usize, py as usize);
-                fb.set_pixel(px as usize, py as usize, prev.lerp(Rgb::new(60, 220, 160), 0.35));
+                fb.set_pixel(
+                    px as usize,
+                    py as usize,
+                    prev.lerp(Rgb::new(60, 220, 160), 0.35),
+                );
             }
         }
     }

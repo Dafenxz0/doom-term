@@ -264,7 +264,9 @@ pub fn run_headless(cfg: &CliConfig) -> BenchmarkReport {
     let start = Instant::now();
     for frame_idx in 0..cfg.frames {
         if frame_idx == cfg.frames / 3 {
-            let _ = game.map.interact_nearest_door(game.camera.pos, game.camera.dir);
+            let _ = game
+                .map
+                .interact_nearest_door(game.camera.pos, game.camera.dir);
         }
         game.camera.rotate(0.035);
         game.move_forward(0.02);
@@ -332,7 +334,10 @@ pub fn run_interactive(cfg: &CliConfig) -> io::Result<()> {
 
     while running {
         let now = Instant::now();
-        let dt = now.duration_since(last_tick).as_secs_f32().clamp(0.001, 0.1);
+        let dt = now
+            .duration_since(last_tick)
+            .as_secs_f32()
+            .clamp(0.001, 0.1);
         last_tick = now;
 
         while event::poll(Duration::from_millis(0))? {
