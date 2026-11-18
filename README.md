@@ -72,6 +72,19 @@ cargo clippy --all-targets -- -D warnings
 cargo test --verbose
 ```
 
+### Sample Headless Benchmark Output (`ubuntu-latest` CI)
+
+```text
+doom-term headless benchmark
+Map:              Sector 01: Tech Bunker
+Resolution:       160x48 cells (160x96 px half-block)
+Frames rendered:  10
+Elapsed:          4.27 ms
+Avg frame time:   0.427 ms
+Throughput:       2344.6 FPS
+Avg ANSI frame:   190369 bytes (31.7% color-escape reduction)
+```
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
